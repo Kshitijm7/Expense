@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="1dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="0dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.155" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideimage2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.066" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideimage3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.212" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.65" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.1944" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidevalue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.944" />
+
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guidetext"
+                app:layout_constraintLeft_toRightOf="@id/guideimage2"
+                app:layout_constraintRight_toLeftOf="@+id/guideimage"
+                app:layout_constraintTop_toTopOf="@+id/guideimage3"
+                app:srcCompat="@drawable/icon_groceries" />
+
+
+            <com.example.kshitijmittal.expense.Textstyle
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="0dp"
+                android:text="Groceries"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/guidetext"
+                app:layout_constraintLeft_toLeftOf="@+id/leftover" />
+
+            <com.example.kshitijmittal.expense.Textstyle
+                android:id="@+id/leftover"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="0dp"
+                android:text="₹ 20 left to spend"
+                android:textColor="#9fa0a2"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toTopOf="@+id/guidetext"
+                app:layout_constraintLeft_toLeftOf="@+id/guidetext2" />
+
+            <com.example.kshitijmittal.expense.Textstyle
+                android:id="@+id/value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="0dp"
+                android:text="20.00"
+                android:textColor="#254C85"
+                android:textSize="18dp"
+                app:layout_constraintRight_toLeftOf="@+id/guidevalue"
+                app:layout_constraintTop_toTopOf="@+id/guideimage3" />
+
+            <com.example.kshitijmittal.expense.Textstyle
+                android:id="@+id/sym"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="0dp"
+                android:text="₹ "
+                android:textColor="#254C85"
+                android:textSize="18dp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/value"
+                app:layout_constraintRight_toLeftOf="@+id/value" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="7dp"
+                android:progress="20"
+                android:progressBackgroundTint="#dadada"
+                android:progressTint="#254C85"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/guidetext2"
+                app:layout_constraintRight_toRightOf="@id/guidevalue"
+                app:layout_constraintTop_toTopOf="@+id/guidetext" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</android.support.constraint.ConstraintLayout>

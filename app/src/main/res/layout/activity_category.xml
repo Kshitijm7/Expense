@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layoutbackground"
+    android:elevation="0dp"
+    tools:context="com.example.kshitijmittal.expense.MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="25dp">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidetoolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/categoryBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="0dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidetoolbar"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.example.kshitijmittal.expense.Textstyle
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="7dp"
+            android:layout_marginLeft="16dp"
+            android:text="Cancel"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="16sp"
+            android:onClick="onCancel"/>
+
+        <com.example.kshitijmittal.expense.Textstyle
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="22sp" />
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.333"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.666"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideh1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideh2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.44" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideh3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.61" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideh4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card11"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:animationCache="false"
+        android:onClick="onClick"
+        app:cardBackgroundColor="@color/layoutbackground"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideh1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guidetoolbar">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/cardview_light_background">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.57"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="133dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.23"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="102dp" />
+
+            <ImageView
+                android:id="@+id/icon11"
+                android:layout_width="49dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guidetext"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext2"
+                app:srcCompat="@drawable/icon_bills" />
+
+            <com.example.kshitijmittal.expense.Textstyle
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Bills"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card12"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:background="#ffffffff"
+        android:onClick="onClick"
+        app:cardBackgroundColor="@color/layoutbackground"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card11"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline2"
+        app:layout_constraintRight_toLeftOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/card11">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/cardview_light_background">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.57"
+                tools:layout_editor_absoluteX="120dp"
+                tools:layout_editor_absoluteY="133dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.23"
+                tools:layout_editor_absoluteX="120dp"
+                tools:layout_editor_absoluteY="102dp" />
+
+            <ImageView
+                android:id="@+id/icon12"
+                android:layout_width="49dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guidetext"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext2"
+                app:srcCompat="@drawable/icon_cash" />
+
+            <com.example.kshitijmittal.expense.Textstyle
+                android:id="@+id/text12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Cash"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card13"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:background="#ffffffff"
+        android:onClick="onClick"
+        app:cardBackgroundColor="@color/layoutbackground"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card12"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/card12"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/cardview_light_background">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.57"
+                tools:layout_editor_absoluteX="240dp"
+                tools:layout_editor_absoluteY="133dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.23"
+                tools:layout_editor_absoluteX="240dp"
+                tools:layout_editor_absoluteY="102dp" />
+
+            <ImageView
+                android:id="@+id/icon13"
+                android:layout_width="49dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guidetext"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext2"
+                app:srcCompat="@drawable/icon_eating" />
+
+            <com.example.kshitijmittal.expense.Textstyle
+                android:id="@+id/text13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Eating out"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card21"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_column="0"
+        android:layout_marginBottom="0dp"
+        android:layout_row="0"
+        android:background="#ffffffff"
+        android:onClick="onClick"
+        app:cardBackgroundColor="@color/layoutbackground"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideh2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/card11"
+        app:layout_constraintRight_toRightOf="@+id/card11"
+        app:layout_constraintTop_toBottomOf="@+id/card11">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/cardview_light_background">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.57"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="268dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.23"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="237dp" />
+
+            <ImageView
+                android:id="@+id/icon21"
+                android:layout_width="49dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guidetext"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext2"
+                app:srcCompat="@drawable/icon_general" />
+
+            <com.example.kshitijmittal.expense.Textstyle
+                android:id="@+id/text21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="General"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card22"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:background="#ffffffff"
+        android:onClick="onClick"
+        app:cardBackgroundColor="@color/layoutbackground"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card21"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline2"
+        app:layout_constraintRight_toLeftOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/card21">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/cardview_light_background">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.57"
+                tools:layout_editor_absoluteX="120dp"
+                tools:layout_editor_absoluteY="268dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.23"
+                tools:layout_editor_absoluteX="120dp"
+                tools:layout_editor_absoluteY="237dp" />
+
+            <ImageView
+                android:id="@+id/icon22"
+                android:layout_width="49dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guidetext"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext2"
+                app:srcCompat="@drawable/icon_groceries" />
+
+            <com.example.kshitijmittal.expense.Textstyle
+                android:id="@+id/text22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Groceries"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card23"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:background="#ffffffff"
+        android:onClick="onClick"
+        app:cardBackgroundColor="@color/layoutbackground"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card22"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/card22">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/cardview_light_background">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.57"
+                tools:layout_editor_absoluteX="240dp"
+                tools:layout_editor_absoluteY="268dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.23"
+                tools:layout_editor_absoluteX="240dp"
+                tools:layout_editor_absoluteY="237dp" />
+
+            <ImageView
+                android:id="@+id/icon23"
+                android:layout_width="49dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guidetext"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext2"
+                app:srcCompat="@drawable/icon_housing" />
+
+            <com.example.kshitijmittal.expense.Textstyle
+                android:id="@+id/text23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Housing"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card31"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_column="0"
+        android:layout_marginBottom="0dp"
+        android:layout_row="0"
+        android:background="#ffffffff"
+        android:onClick="onClick"
+        app:cardBackgroundColor="@color/layoutbackground"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideh3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/card21"
+        app:layout_constraintRight_toRightOf="@+id/card21"
+        app:layout_constraintTop_toBottomOf="@+id/card21">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/cardview_light_background">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.57"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="378dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.23"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="347dp" />
+
+            <ImageView
+                android:id="@+id/icon31"
+                android:layout_width="49dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guidetext"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext2"
+                app:srcCompat="@drawable/icon_leisure" />
+
+            <com.example.kshitijmittal.expense.Textstyle
+                android:id="@+id/text31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="leisure"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card32"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:background="#ffffffff"
+        android:onClick="onClick"
+        app:cardBackgroundColor="@color/layoutbackground"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card31"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline2"
+        app:layout_constraintRight_toLeftOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/card31">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/cardview_light_background">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.57"
+                tools:layout_editor_absoluteX="120dp"
+                tools:layout_editor_absoluteY="378dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.23"
+                tools:layout_editor_absoluteX="120dp"
+                tools:layout_editor_absoluteY="347dp" />
+
+            <ImageView
+                android:id="@+id/icon32"
+                android:layout_width="49dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guidetext"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext2"
+                app:srcCompat="@drawable/icon_personal" />
+
+            <com.example.kshitijmittal.expense.Textstyle
+                android:id="@+id/text32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Personal Care"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card33"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:background="#ffffffff"
+        android:onClick="onClick"
+        app:cardBackgroundColor="@color/layoutbackground"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card32"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/card32">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/cardview_light_background">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.57"
+                tools:layout_editor_absoluteX="240dp"
+                tools:layout_editor_absoluteY="378dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.23"
+                tools:layout_editor_absoluteX="240dp"
+                tools:layout_editor_absoluteY="347dp" />
+
+            <ImageView
+                android:id="@+id/icon33"
+                android:layout_width="49dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guidetext"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext2"
+                app:srcCompat="@drawable/icon_shopping" />
+
+            <com.example.kshitijmittal.expense.Textstyle
+                android:id="@+id/text33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Shopping"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card41"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_column="0"
+        android:layout_marginBottom="0dp"
+        android:layout_row="0"
+        android:background="#ffffffff"
+        android:elevation="0dp"
+        android:onClick="onClick"
+        app:cardBackgroundColor="@color/layoutbackground"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideh4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/card31"
+        app:layout_constraintRight_toRightOf="@+id/card31"
+        app:layout_constraintTop_toBottomOf="@+id/card31">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/cardview_light_background">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.57"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="536dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.23"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="505dp" />
+
+            <ImageView
+                android:id="@+id/icon41"
+                android:layout_width="49dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guidetext"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext2"
+                app:srcCompat="@drawable/icon_transfer" />
+
+            <com.example.kshitijmittal.expense.Textstyle
+                android:id="@+id/text41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Transfer"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card42"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:background="#ffffffff"
+        android:onClick="onClick"
+        app:cardBackgroundColor="@color/layoutbackground"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card41"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline2"
+        app:layout_constraintRight_toLeftOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/card41">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/cardview_light_background">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.57"
+                tools:layout_editor_absoluteX="120dp"
+                tools:layout_editor_absoluteY="536dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.23"
+                tools:layout_editor_absoluteX="120dp"
+                tools:layout_editor_absoluteY="505dp" />
+
+            <ImageView
+                android:id="@+id/icon42"
+                android:layout_width="49dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guidetext"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext2"
+                app:srcCompat="@drawable/icon_transport" />
+
+            <com.example.kshitijmittal.expense.Textstyle
+                android:id="@+id/text42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Transport"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card43"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:background="#ffffffff"
+        android:onClick="onClick"
+        app:cardBackgroundColor="@color/layoutbackground"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card42"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/card42">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@color/cardview_light_background">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.57"
+                tools:layout_editor_absoluteX="240dp"
+                tools:layout_editor_absoluteY="536dp" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guidetext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.23"
+                tools:layout_editor_absoluteX="240dp"
+                tools:layout_editor_absoluteY="505dp" />
+
+            <ImageView
+                android:id="@+id/icon43"
+                android:layout_width="49dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/guidetext"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext2"
+                app:srcCompat="@drawable/icon_travel" />
+
+            <com.example.kshitijmittal.expense.Textstyle
+                android:id="@+id/text43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Travel"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidetext" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+</android.support.constraint.ConstraintLayout>
