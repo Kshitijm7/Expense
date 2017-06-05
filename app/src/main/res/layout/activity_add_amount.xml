@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F4F8"
+    android:elevation="0dp"
+    tools:context="com.example.kshitijmittal.expense.MainActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidetoolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"
+        tools:layout_editor_absoluteY="66dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidecenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"
+        tools:layout_editor_absoluteY="329dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guidetoolbar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.example.kshitijmittal.expense.Textstyle
+            android:id="@+id/cancel_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:onClick="onCancel"
+            android:padding="7dp"
+            android:text="Cancel"
+            android:textSize="16sp" />
+
+
+        <com.example.kshitijmittal.expense.Textstyle
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <com.example.kshitijmittal.expense.Textstyle
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last month you spent"
+        android:textAlignment="center"
+        android:textColor="#95989A"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView21" />
+
+    <com.example.kshitijmittal.expense.Textstyle
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="₹ 0 on Transport"
+        android:textAlignment="center"
+        android:textColor="#95989A"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.65999997" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/icon_transport"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/set"
+        android:layout_width="155dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="26dp"
+        android:background="@drawable/addbuttonbackground"
+        android:text="Set"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="onSet"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="275dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="-2dp"
+        android:background="@drawable/addbuttonbackground"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidecenter">
+
+        <com.example.kshitijmittal.expense.Textstyle
+            android:id="@+id/minus"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="2dp"
+            android:gravity="center"
+            android:onClick="onMinus"
+            android:paddingBottom="7dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="13dp"
+            android:text="−"
+            android:textColor="@color/colorPrimary"
+            android:textSize="32sp" />
+
+        <com.example.kshitijmittal.expense.Textstyle
+            android:id="@+id/currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:inputType="numberDecimal"
+            android:text="₹"
+            android:textColor="@color/colorPrimary"
+            android:textSize="28sp" />
+
+        <EditText
+            android:id="@+id/value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/cardview_light_background"
+            android:cursorVisible="false"
+            android:gravity="center_vertical"
+            android:inputType="number"
+            android:maxLength="7"
+            android:text="500"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@color/colorPrimary"
+            android:textSize="26sp" />
+
+        <com.example.kshitijmittal.expense.Textstyle
+            android:id="@+id/plus"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="2dp"
+            android:gravity="center"
+            android:onClick="onPlus"
+            android:paddingBottom="7dp"
+            android:paddingLeft="13dp"
+            android:paddingRight="30dp"
+            android:text="+"
+            android:textColor="@color/colorPrimary"
+            android:textSize="34sp" />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

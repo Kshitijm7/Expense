@@ -11,6 +11,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,11 +20,17 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
+    SharedPreferences shareddata;
+    public static final String mypreference = "mypref";
   String titlev[]=new String[12],leftoverv[]=new String[12];
     int imagev[]=new int[12],valuev[]=new int[12];
 
@@ -60,16 +67,33 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new Budgetadapter(budgetList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setAdapter(mAdapter);
+        prepareData();
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(MainActivity.this, new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Intent i = new Intent(MainActivity.this, AddAmount.class);
+                        i.putExtra("location", position);
+                        startActivity(i);
+                    }
+                })
+        );
+
 
     }
 
     private void prepareData() {
+        shareddata =getSharedPreferences(mypreference,Context.MODE_PRIVATE);
+        Gson gson =new Gson();
+        List<Budget> budgets=new ArrayList<>();
+        String json = shareddata.getString("card", "");
+        Type type = new TypeToken<ArrayList<Budget>>() {}.getType();
+        budgets=gson.fromJson(json,type);
         recyclerView.setAdapter(mAdapter);
-        Budget budget;
         budgetList.clear();
-        for (j = 0; j < n; j++) {
-            budget = new Budget(imagev[j], titlev[j], leftoverv[j],valuev[j]);
-            budgetList.add(budget);
+        for (j = 0; j < budgets.size(); j++) {
+            budgetList.add(budgets.get(j));
         }
     }
 
@@ -79,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, REQUEST_CODE);
     }
 
+
+
     protected void onActivityResult(int requestCode, int resultCode,Intent data) {
 
             if(resultCode == RESULT_OK){
@@ -86,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 int value=data.getIntExtra("value",-1);
                 for(i=0;i<n;i++){
                     if(titlev[i].equals(category)){
-                        valuev[i]+=value;
+                        valuev[i]=value;
                         break;
                     }
                 }

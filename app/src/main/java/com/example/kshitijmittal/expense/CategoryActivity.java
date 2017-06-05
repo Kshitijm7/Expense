@@ -12,8 +12,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class CategoryActivity extends AppCompatActivity {
@@ -31,6 +34,9 @@ public class CategoryActivity extends AppCompatActivity {
     int i;
     Textstyle title;
    Toolbar toolbar;
+    GridView Categorys;
+    List<Budget> CategoryList=new ArrayList<>();
+    CategoryAdapter categoryAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +51,20 @@ public class CategoryActivity extends AppCompatActivity {
         title=(Textstyle)findViewById(R.id.toolbar_title);
         title.setTypeface(null, Typeface.BOLD);
         title.setText("Category");
+        Categorys=(GridView)findViewById(R.id.gridview);
+
+      categoryAdapter=new CategoryAdapter(this,R.layout.categorycard,CategoryList);
+
     }
 
+
+    private void prepareData(){
+        Categorys.setAdapter(categoryAdapter);
+        Budget budget;
+        for(i=0;i<12;i++){
+        budget=new Budget(image[i],cardname[i],"",0);
+            CategoryList.add(budget);
+    }}
 
    public void onClick(View view) {
         setContentView(R.layout.addamount);
@@ -75,33 +93,7 @@ public class CategoryActivity extends AppCompatActivity {
         icon.setImageResource(image[i]);
     }
 
- public void onPlus(View view){
-     EditText value=(EditText)findViewById(R.id.value);
-     int val=Integer.parseInt(value.getText().toString());
-     val=val+500;
-     if(val>10000000)val=10000000;
-     value.setText(String.valueOf(val));
- }
 
-    public void onMinus(View view){
-        EditText value=(EditText)findViewById(R.id.value);
-        int val=Integer.parseInt(value.getText().toString());
-        val=val-500;
-        if(val<0)val=0;
-        value.setText(String.valueOf(val));
-    }
-
-    public void onSet(View view){
-        EditText value=(EditText)findViewById(R.id.value);
-        title=(Textstyle)findViewById(R.id.toolbar_title);
-        int val=Integer.parseInt(value.getText().toString());
-        Intent output = new Intent();
-        output.putExtra("category",cardname[i]);
-        output.putExtra("value",val);
-        setResult(RESULT_OK, output);
-        finish();
-
-    }
     public void onCancel(View view){
         Intent returnIntent = new Intent();
         setResult(RESULT_CANCELED, returnIntent);
