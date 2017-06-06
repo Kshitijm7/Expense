@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class Budgetadapter extends RecyclerView.Adapter<Budgetadapter.MyViewHold
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title, leftover, value;
         public ImageView icon;
+        public ProgressBar bar;
 
         public MyViewHolder(View view) {
             super(view);
@@ -23,6 +25,7 @@ public class Budgetadapter extends RecyclerView.Adapter<Budgetadapter.MyViewHold
             leftover = (TextView) view.findViewById(R.id.leftover);
             value = (TextView) view.findViewById(R.id.value);
             icon = (ImageView) view.findViewById(R.id.icon);
+            bar=(ProgressBar)view.findViewById(R.id.progressBar);
         }
     }
 
@@ -46,6 +49,7 @@ public class Budgetadapter extends RecyclerView.Adapter<Budgetadapter.MyViewHold
         holder.leftover.setText(budget.getLeftover());
         holder.value.setText(String.valueOf(budget.getValue()));
         holder.icon.setImageResource(budget.getIcon());
+        holder.bar.setProgress(budget.getProgress());
     }
 
     @Override

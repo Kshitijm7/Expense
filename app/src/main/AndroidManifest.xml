@@ -6,25 +6,34 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon_cash"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:roundIcon="@drawable/icon_cash"
+        android:supportsRtl="true">
+
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".CategoryActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"></activity>
-        <activity android:name=".AddAmount"></activity>
+            android:theme="@style/AppThemeCategory">
+        </activity>
+
+        <activity android:name=".AddAmount"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:theme="@style/AppThemeCategory"
+            android:screenOrientation="portrait">
+        </activity>
+
     </application>
 
 </manifest>

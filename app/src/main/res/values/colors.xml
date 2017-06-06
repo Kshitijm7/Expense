@@ -4,5 +4,6 @@
     <color name="colorPrimaryDark">#e1c143</color>
     <color name="colorAccent">#FF4081</color>
     <color name="categoryBar">#79CA7B</color>
+    <color name="categoryStatusBar">#71bd73</color>
     <color name="layoutbackground">#f2f4f8</color>
 </resources>

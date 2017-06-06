@@ -7,4 +7,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="AppThemeCategory" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/categoryBar</item>
+        <item name="colorPrimaryDark">@color/categoryStatusBar</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
 </resources>
