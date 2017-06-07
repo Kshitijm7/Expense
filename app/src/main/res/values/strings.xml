@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Expense</string>
+    <string name="settrack">Set &amp; track your budgets</string>
 </resources>
