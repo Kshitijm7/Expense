@@ -13,7 +13,6 @@
 
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,14 +23,12 @@
 
         <activity
             android:name=".CategoryActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/AppThemeCategory">
         </activity>
 
         <activity android:name=".AddAmount"
             android:windowSoftInputMode="stateHidden|adjustResize"
-            android:theme="@style/AppThemeCategory"
-            android:screenOrientation="portrait">
+            android:theme="@style/AppThemeCategory">
         </activity>
 
     </application>

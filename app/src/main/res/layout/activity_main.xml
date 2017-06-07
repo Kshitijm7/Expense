@@ -20,11 +20,12 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="?attr/colorPrimary"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidetoolbar"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/guidetoolbar"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintVertical_bias="0.0">
 
 
@@ -35,19 +36,20 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="4dp"
             android:textAppearance="@style/TextAppearance.AppCompat"
-            android:textSize="20sp" />
+            android:textSize="19sp" />
 
         <com.example.kshitijmittal.expense.Textstyle
             android:id="@+id/add"
             android:layout_width="42dp"
             android:layout_height="match_parent"
             android:layout_gravity="end"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="15dp"
             android:foregroundGravity="center"
-            android:text="+"
-            android:textSize="32dp"
             android:gravity="center"
-            android:onClick="onAdd"/>
+            android:onClick="onAdd"
+            android:text="+"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="32dp" />
     </android.support.v7.widget.Toolbar>
 
 

@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private List<Budget> budgetList = new ArrayList<>();
     private RecyclerView recyclerView;
     private Budgetadapter mAdapter;
-    Textstyle editText;
+    Textstyle title;
     Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar1);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
-        editText = (Textstyle) findViewById(R.id.toolbar_title);
-        editText.setTypeface(null, Typeface.NORMAL);
-        editText.setText(R.string.settrack);
+        title = (Textstyle) findViewById(R.id.toolbar_title);
+        title.setText(R.string.settrack);
+        title.setTypeface(null, Typeface.BOLD);
         recyclerView = (RecyclerView) findViewById(R.id.recycleview);
         mAdapter = new Budgetadapter(budgetList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());

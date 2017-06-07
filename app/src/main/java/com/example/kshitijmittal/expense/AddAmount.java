@@ -131,6 +131,7 @@ public class AddAmount extends AppCompatActivity {
     };
 
     public <Budget> void setBudget(String key, List<Budget> Budgets) {
+       setProgress(budgets);
         Gson gson = new Gson();
         String json = gson.toJson(Budgets);
         set(key, json);
@@ -160,4 +161,17 @@ public class AddAmount extends AppCompatActivity {
             startActivity(i);
         }
     }
+
+    public void setProgress(List<Budget> budgets) {
+        double value = 0;
+        try {
+            for (int i = 0; i < budgets.size(); i++)
+                value += budgets.get(i).getValue();
+
+            for (int i = 0; i < budgets.size(); i++)
+                budgets.get(i).setProgress((int)((budgets.get(i).getValue()*100)/value));
+
+        }catch (Exception e){}
+    }
+
 }

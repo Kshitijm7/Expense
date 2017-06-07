@@ -5,12 +5,11 @@ public class Budget {
     int value;
     int icon,progress;
 
-    public Budget(int icon, String title, String leftover, int value,int progress) {
+    public Budget(int icon, String title, String leftover, int value) {
         this.title = title;
         this.icon= icon;
         this.leftover = leftover;
         this.value = value;
-        this.progress=progress;
     }
 
     public String getTitle() {return title;}
@@ -38,4 +37,5 @@ public class Budget {
     }
 
     public int getProgress(){return progress;}
+    public void setProgress(int progress) {this.progress = progress;}
 }
