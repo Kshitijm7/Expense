@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                         i.putExtra("positionS", position);
                         startActivity(i);
                     }
+
                 })
         );
 
@@ -71,7 +72,10 @@ public class MainActivity extends AppCompatActivity {
         try{
         for (j = 0; j < budgets.size(); j++) {
             budgetList.add(budgets.get(j));
-        }}catch (Exception e){}
+        }}catch (Exception e){
+            Textstyle nobudget=(Textstyle)findViewById(R.id.nobudget);
+            nobudget.setText("No Budget yet");
+        }
     }
 
 
