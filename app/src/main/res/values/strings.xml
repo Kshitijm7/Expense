@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Expense</string>
     <string name="settrack">Set &amp; track your budgets</string>
+    <string name="nobuget">No Budget Yet</string>
 </resources>
