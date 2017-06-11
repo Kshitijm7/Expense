@@ -2,40 +2,25 @@ package com.example.kshitijmittal.expense;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.GridView;
-import android.widget.ImageView;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class CategoryActivity extends AppCompatActivity {
-    int i,size=12;
-    public static final String mypreference = "mypref";
-    public SharedPreferences shareddata;
+    final int size=12,columns=3;
+    int i;
     Textstyle title;
     Toolbar toolbar;
-    GridView Categorys;
+    RecyclerView Categorys;
+    Context mcontext;
     Data data=new Data();
-    Budget budget;
     List<Budget> CategoryList=new ArrayList<>();
     List<Budget> budgets=new ArrayList<>();
     CategoryAdapter categoryAdapter;
@@ -48,22 +33,20 @@ public class CategoryActivity extends AppCompatActivity {
         title=(Textstyle)findViewById(R.id.toolbar_title);
         title.setTypeface(null, Typeface.BOLD);
         title.setText("Category");
-        Categorys=(GridView)findViewById(R.id.gridview);
-        categoryAdapter=new CategoryAdapter(this,R.layout.categorycard,CategoryList);
-        prepareData();
-        Categorys.setOnItemClickListener(clickon);
-    }
 
+        Categorys=(RecyclerView) findViewById(R.id.gridlayout);
+        Categorys.setLayoutManager(new GridLayoutManager(this, columns));
 
-    private void prepareData(){
+        CategoryList=data.returnDataList();
+
+        mcontext=this;
+        categoryAdapter= new CategoryAdapter(mcontext,CategoryList);
         Categorys.setAdapter(categoryAdapter);
-        Budget budget;
-        for(i=0;i<size;i++){
-        budget=data.returnData(i);
-            CategoryList.add(budget);
-        }
+
     }
 
+
+/*
     OnItemClickListener clickon=new OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -92,12 +75,12 @@ public class CategoryActivity extends AppCompatActivity {
     public void sharedData(){
         shareddata =getSharedPreferences(mypreference, Context.MODE_PRIVATE);
         Gson gson = new Gson();
-        String json = shareddata.getString("card", "");
+        String json = shareddata.getString(mypreferencekey, "");
         Type type = new TypeToken<ArrayList<Budget>>() {}.getType();
         if(gson.fromJson(json, type)!=null)
             budgets = gson.fromJson(json, type);
     }
-
+*/
     public void onCancel(View view){
         Intent i = new Intent(CategoryActivity.this, MainActivity.class);
         startActivity(i);

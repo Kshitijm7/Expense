@@ -49,7 +49,8 @@
             android:onClick="onCancel"
             android:padding="7dp"
             android:text="Cancel"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
 
         <com.example.kshitijmittal.expense.Textstyle
@@ -60,6 +61,17 @@
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="22sp"
             android:textStyle="bold" />
+
+        <com.example.kshitijmittal.expense.Textstyle
+            android:id="@+id/delete_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginRight="16dp"
+            android:hapticFeedbackEnabled="true"
+            android:onClick="onDelete"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
 
     </android.support.v7.widget.Toolbar>
 

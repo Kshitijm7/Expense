@@ -56,20 +56,19 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <GridView
-        android:id="@+id/gridview"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/gridlayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:numColumns="3"
-        android:orientation="vertical"
-        android:outlineProvider="none"
-        android:stretchMode="columnWidth"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guidetoolbar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/guidetoolbar"
+        app:layout_constraintVertical_bias="0.0"
+        android:scrollbars="vertical">
+
+    </android.support.v7.widget.RecyclerView>
 
 
 </android.support.constraint.ConstraintLayout>
